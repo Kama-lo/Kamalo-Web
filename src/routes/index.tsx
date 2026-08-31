@@ -58,9 +58,15 @@ function Index() {
     const el = coinRef.current;
     if (!el) return;
     const io = new IntersectionObserver(
-      ([e]) => e.isIntersecting && (setCoinsVisible(true), io.disconnect()),
+      (entries) => {
+        if (entries.some((e) => e.isIntersecting)) {
+          setCoinsVisible(true);
+          io.disconnect();
+        }
+      },
       { threshold: 0.4 },
     );
+
     io.observe(el);
     return () => io.disconnect();
   }, []);

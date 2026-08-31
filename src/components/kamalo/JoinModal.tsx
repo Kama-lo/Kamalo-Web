@@ -34,16 +34,16 @@ export function JoinModal({ open, onClose }: { open: boolean; onClose: () => voi
   }, [open, onClose]);
 
   useEffect(() => {
-    if (!open) {
-      const t = setTimeout(() => {
-        setStage("form");
-        setPhone("");
-        setError(null);
-        setCopied(false);
-      }, 300);
-      return () => clearTimeout(t);
-    }
+    if (open) return undefined;
+    const t = setTimeout(() => {
+      setStage("form");
+      setPhone("");
+      setError(null);
+      setCopied(false);
+    }, 300);
+    return () => clearTimeout(t);
   }, [open]);
+
 
   if (!open) return null;
 
