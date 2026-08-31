@@ -128,7 +128,7 @@ function Index() {
 
           <div className="relative order-1 flex justify-center lg:order-2 lg:justify-end">
             <div
-              className="w-[62vw] max-w-[420px] sm:w-[46vw] lg:w-full"
+              className="w-[46vw] max-w-[420px] sm:w-[44vw] lg:w-full"
               style={{ transform: `translateY(${scrollY * -0.04}px)` }}
             >
               <div className="float-slow">
