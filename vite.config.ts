@@ -18,6 +18,9 @@ export default defineConfig({
       server: { entry: "src/server.ts" },
     }),
     viteReact(),
-    nitro(),
+    nitro({
+      // Vercel sets VERCEL=1 during build; locally keep the Node server for preview.
+      preset: process.env.VERCEL ? "vercel" : undefined,
+    }),
   ],
 });
