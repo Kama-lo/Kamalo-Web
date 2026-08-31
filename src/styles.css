@@ -46,52 +46,94 @@
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
+/* KAMALO PAPER — light theme */
 :root {
   --radius: 0.75rem;
 
-  --background: oklch(0.145 0.008 60);
-  --foreground: oklch(0.965 0.012 85);
-  --ink: oklch(0.145 0.008 60);
-  --surface: oklch(0.19 0.01 62);
-  --surface-2: oklch(0.235 0.014 65);
+  --background: oklch(0.973 0.013 86);
+  --foreground: oklch(0.185 0.014 58);
+  --ink: oklch(0.185 0.014 58);
+  --surface: oklch(0.945 0.016 85);
+  --surface-2: oklch(0.902 0.021 84);
 
-  --card: oklch(0.19 0.01 62);
-  --card-foreground: oklch(0.965 0.012 85);
-  --popover: oklch(0.175 0.01 62);
-  --popover-foreground: oklch(0.965 0.012 85);
+  --card: oklch(0.945 0.016 85);
+  --card-foreground: oklch(0.185 0.014 58);
+  --popover: oklch(0.985 0.008 86);
+  --popover-foreground: oklch(0.185 0.014 58);
 
-  --primary: oklch(0.74 0.175 55);
-  --primary-foreground: oklch(0.145 0.008 60);
-  --reward: oklch(0.86 0.16 92);
-  --reward-foreground: oklch(0.145 0.008 60);
+  --primary: oklch(0.605 0.196 42);
+  --primary-foreground: oklch(0.985 0.01 86);
+  --reward: oklch(0.7 0.145 78);
+  --reward-foreground: oklch(0.185 0.014 58);
 
-  --secondary: oklch(0.235 0.014 65);
-  --secondary-foreground: oklch(0.965 0.012 85);
-  --muted: oklch(0.235 0.014 65);
-  --muted-foreground: oklch(0.68 0.014 70);
-  --accent: oklch(0.26 0.02 65);
-  --accent-foreground: oklch(0.965 0.012 85);
-  --destructive: oklch(0.6 0.21 25);
-  --destructive-foreground: oklch(0.98 0.01 85);
+  --secondary: oklch(0.902 0.021 84);
+  --secondary-foreground: oklch(0.185 0.014 58);
+  --muted: oklch(0.925 0.017 85);
+  --muted-foreground: oklch(0.475 0.02 62);
+  --accent: oklch(0.915 0.03 78);
+  --accent-foreground: oklch(0.185 0.014 58);
+  --destructive: oklch(0.52 0.2 27);
+  --destructive-foreground: oklch(0.985 0.01 86);
 
-  --border: oklch(0.965 0.012 85 / 12%);
-  --input: oklch(0.965 0.012 85 / 16%);
-  --ring: oklch(0.74 0.175 55);
+  --border: oklch(0.185 0.014 58 / 14%);
+  --input: oklch(0.185 0.014 58 / 20%);
+  --ring: oklch(0.605 0.196 42);
 
   --gradient-ember: radial-gradient(
     60% 60% at 50% 40%,
-    color-mix(in oklab, var(--primary) 38%, transparent),
+    color-mix(in oklab, var(--primary) 16%, transparent),
     transparent 70%
   );
   --gradient-cta: linear-gradient(
     100deg,
     var(--primary),
-    color-mix(in oklab, var(--reward) 70%, var(--primary))
+    color-mix(in oklab, var(--reward) 55%, var(--primary))
   );
-  --shadow-cta: 0 18px 50px -18px color-mix(in oklab, var(--primary) 65%, transparent);
-  --shadow-deep: 0 40px 120px -40px oklch(0 0 0 / 80%);
+  --shadow-cta: 0 18px 44px -20px color-mix(in oklab, var(--primary) 55%, transparent);
+  --shadow-deep: 0 40px 100px -45px oklch(0.185 0.014 58 / 35%);
   --ease-kamalo: cubic-bezier(0.22, 1, 0.36, 1);
 }
+
+/* KAMALO INK — dark theme */
+.dark {
+  --background: oklch(0.158 0.012 58);
+  --foreground: oklch(0.965 0.013 86);
+  --ink: oklch(0.158 0.012 58);
+  --surface: oklch(0.202 0.015 60);
+  --surface-2: oklch(0.248 0.018 62);
+
+  --card: oklch(0.202 0.015 60);
+  --card-foreground: oklch(0.965 0.013 86);
+  --popover: oklch(0.19 0.015 60);
+  --popover-foreground: oklch(0.965 0.013 86);
+
+  --primary: oklch(0.745 0.175 52);
+  --primary-foreground: oklch(0.158 0.012 58);
+  --reward: oklch(0.855 0.148 88);
+  --reward-foreground: oklch(0.158 0.012 58);
+
+  --secondary: oklch(0.248 0.018 62);
+  --secondary-foreground: oklch(0.965 0.013 86);
+  --muted: oklch(0.248 0.018 62);
+  --muted-foreground: oklch(0.705 0.018 72);
+  --accent: oklch(0.28 0.028 62);
+  --accent-foreground: oklch(0.965 0.013 86);
+  --destructive: oklch(0.62 0.21 26);
+  --destructive-foreground: oklch(0.985 0.01 86);
+
+  --border: oklch(0.965 0.013 86 / 13%);
+  --input: oklch(0.965 0.013 86 / 18%);
+  --ring: oklch(0.745 0.175 52);
+
+  --gradient-ember: radial-gradient(
+    60% 60% at 50% 40%,
+    color-mix(in oklab, var(--primary) 34%, transparent),
+    transparent 70%
+  );
+  --shadow-cta: 0 18px 50px -18px color-mix(in oklab, var(--primary) 60%, transparent);
+  --shadow-deep: 0 40px 120px -40px oklch(0 0 0 / 80%);
+}
+
 
 @layer base {
   * {
