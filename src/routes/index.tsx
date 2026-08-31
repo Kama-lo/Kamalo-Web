@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 
 import artifact from "@/assets/kamalo-artifact.png";
+import artifactLight from "@/assets/kamalo-artifact-light.png";
+
 import coin from "@/assets/kamalo-coin.png";
 import { JoinModal } from "@/components/kamalo/JoinModal";
 import { Reveal } from "@/components/kamalo/Reveal";
@@ -84,30 +86,33 @@ function Index() {
       <SiteNav onJoin={open} />
 
       {/* HERO */}
-      <section className="relative flex min-h-[100svh] flex-col justify-center px-6 pt-32 pb-24 sm:px-10">
-        <div className="ember pointer-events-none absolute top-[-10%] left-1/2 h-[70vh] w-[120vw] -translate-x-1/2 opacity-70" />
-        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.15fr_0.85fr]">
-          <div>
+      <section className="relative flex min-h-[100svh] flex-col justify-center px-5 pt-28 pb-20 sm:px-10 sm:pt-32 sm:pb-24">
+        <div className="ember pointer-events-none absolute top-[-10%] left-1/2 h-[70vh] w-[120vw] -translate-x-1/2" />
+        <div className="relative mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.12fr_0.88fr] lg:gap-14">
+          <div className="order-2 lg:order-1">
             <Reveal>
-              <p className="eyebrow">Coming soon · India</p>
+              <p className="eyebrow flex items-center gap-3">
+                <span className="h-px w-8 bg-primary" />
+                Coming soon · India
+              </p>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="display mt-6 text-[clamp(3.4rem,13vw,9.5rem)]">
+              <h1 className="display mt-5 text-[clamp(3.2rem,13vw,9.5rem)] sm:mt-6">
                 Pay.
                 <br />
                 <span className="text-ember">Get more.</span>
               </h1>
             </Reveal>
             <Reveal delay={160}>
-              <p className="mt-8 max-w-md text-lg text-muted-foreground">
+              <p className="mt-6 max-w-md text-base text-muted-foreground sm:mt-8 sm:text-lg">
                 KAMALO is building a smarter way to make everyday payments more rewarding.
               </p>
             </Reveal>
             <Reveal delay={240}>
-              <div className="mt-10 flex flex-wrap items-center gap-6">
+              <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-4 sm:mt-10">
                 <button
                   onClick={open}
-                  className="cta-surface rounded-full px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase"
+                  className="cta-surface w-full rounded-full px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase sm:w-auto"
                 >
                   Join KAMALO
                 </button>
@@ -121,22 +126,33 @@ function Index() {
             </Reveal>
           </div>
 
-          <div className="relative flex justify-center lg:justify-end">
+          <div className="relative order-1 flex justify-center lg:order-2 lg:justify-end">
             <div
-              className="float-slow w-[70vw] max-w-[440px] lg:w-full"
+              className="w-[46vw] max-w-[420px] sm:w-[44vw] lg:w-full"
               style={{ transform: `translateY(${scrollY * -0.04}px)` }}
             >
-              <img
-                src={artifact}
-                alt="The KAMALO mark, a metal token with a glowing lotus emblem"
-                width={1280}
-                height={1280}
-                className="h-auto w-full drop-shadow-[0_50px_90px_rgba(0,0,0,0.65)]"
-              />
+              <div className="float-slow">
+                <img
+                  src={artifactLight}
+                  alt="The KAMALO mark, a token carved with a lotus emblem"
+                  width={1024}
+                  height={1024}
+                  className="h-auto w-full drop-shadow-[0_40px_70px_oklch(0.185_0.014_58/0.25)] dark:hidden"
+                />
+                <img
+                  src={artifact}
+                  alt=""
+                  width={1280}
+                  height={1280}
+                  className="hidden h-auto w-full drop-shadow-[0_50px_90px_rgba(0,0,0,0.65)] dark:block"
+                />
+              </div>
             </div>
           </div>
         </div>
       </section>
+
+
 
       {/* SECTION 2 — THE IDEA */}
       <section id="idea" className="hairline px-6 py-32 sm:px-10 sm:py-44">
