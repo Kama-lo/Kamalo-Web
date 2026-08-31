@@ -118,7 +118,7 @@ const themeScript = `(function(){try{var s=localStorage.getItem('kamalo-theme');
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
