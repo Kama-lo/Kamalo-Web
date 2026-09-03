@@ -29,26 +29,26 @@ export const Route = createFileRoute("/about")({
 function About() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <SiteNav onJoin={() => setOpen(true)} />
-      <main className="px-6 pt-40 pb-28 sm:px-10 sm:pt-52">
+      <main className="px-5 pt-28 pb-24 sm:px-10 sm:pt-48">
         <div className="mx-auto max-w-3xl">
           <p className="eyebrow">About</p>
-          <h1 className="display mt-6 text-[clamp(2.8rem,9vw,6.5rem)]">
+          <h1 className="display mt-5 sm:mt-6 text-[clamp(2.2rem,8vw,6.5rem)]">
             We're building the reward layer for everyday payments.
           </h1>
-          <p className="mt-10 text-lg text-muted-foreground">
+          <p className="mt-8 sm:mt-10 text-base sm:text-lg text-muted-foreground">
             Money moves every day — for chai, for groceries, for the things you already buy. KAMALO
             makes that movement give something back, without asking you to change how you pay.
           </p>
-          <p className="display mt-14 text-3xl sm:text-4xl">
+          <p className="display mt-10 sm:mt-14 text-2xl sm:text-4xl">
             Built in India.
             <br />
             <span className="text-muted-foreground">Designed for everyday life.</span>
           </p>
           <button
             onClick={() => setOpen(true)}
-            className="cta-surface mt-14 rounded-full px-10 py-5 text-sm font-semibold tracking-[0.2em] uppercase"
+            className="cta-surface mt-10 sm:mt-14 w-full sm:w-auto rounded-full px-10 py-4 sm:py-5 text-sm font-semibold tracking-[0.2em] uppercase"
           >
             Join KAMALO
           </button>

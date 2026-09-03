@@ -27,7 +27,7 @@ function Contact() {
     >
       <div className="space-y-8">
         <div className="grid gap-4 sm:grid-cols-2">
-          <div className="rounded-2xl border border-border bg-surface/50 p-6 space-y-2">
+          <div className="rounded-2xl border border-border bg-surface/50 p-5 sm:p-6 space-y-2">
             <div className="flex items-center gap-2 text-foreground font-semibold text-sm">
               <Mail className="h-4 w-4 text-primary" />
               General Enquiries
@@ -40,7 +40,7 @@ function Contact() {
             </a>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface/50 p-6 space-y-2">
+          <div className="rounded-2xl border border-border bg-surface/50 p-5 sm:p-6 space-y-2">
             <div className="flex items-center gap-2 text-foreground font-semibold text-sm">
               <Shield className="h-4 w-4 text-primary" />
               Customer Support Desk
@@ -53,7 +53,7 @@ function Contact() {
             </a>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface/50 p-6 space-y-2">
+          <div className="rounded-2xl border border-border bg-surface/50 p-5 sm:p-6 space-y-2">
             <div className="flex items-center gap-2 text-foreground font-semibold text-sm">
               <Building2 className="h-4 w-4 text-primary" />
               Partnerships & Merchants
@@ -66,7 +66,7 @@ function Contact() {
             </a>
           </div>
 
-          <div className="rounded-2xl border border-border bg-surface/50 p-6 space-y-2">
+          <div className="rounded-2xl border border-border bg-surface/50 p-5 sm:p-6 space-y-2">
             <div className="flex items-center gap-2 text-foreground font-semibold text-sm">
               <MapPin className="h-4 w-4 text-primary" />
               Registered Corporate Entity

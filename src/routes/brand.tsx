@@ -49,43 +49,43 @@ function Row({ label, children }: { label: string; children: React.ReactNode }) 
 function Brand() {
   const [open, setOpen] = useState(false);
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen overflow-x-clip bg-background">
       <SiteNav onJoin={() => setOpen(true)} />
-      <main className="px-5 pt-32 pb-24 sm:px-10 sm:pt-52">
+      <main className="px-5 pt-28 pb-24 sm:px-10 sm:pt-48">
         <div className="mx-auto max-w-5xl">
           <Reveal>
             <p className="eyebrow">Brand kit · v1.0</p>
-            <h1 className="display mt-5 text-[clamp(2.6rem,9vw,6.5rem)]">
+            <h1 className="display mt-5 text-[clamp(2.2rem,8vw,6.5rem)]">
               How KAMALO
               <br />
               <span className="text-ember">looks and sounds.</span>
             </h1>
           </Reveal>
 
-          <div className="mt-16">
+          <div className="mt-12 sm:mt-16">
             <Row label="The mark">
               <div className="grid gap-4 sm:grid-cols-3">
-                <div className="flex aspect-square items-center justify-center rounded-2xl border border-border bg-surface">
-                  <KamaloMark className="h-20 w-20 text-primary" title="KAMALO mark" />
+                <div className="flex aspect-square items-center justify-center rounded-2xl border border-border bg-surface p-6">
+                  <img src="/favicon.png" alt="KAMALO mark" className="h-20 w-20 rounded-2xl shadow-lg" />
                 </div>
-                <div className="flex aspect-square items-center justify-center rounded-2xl bg-foreground">
-                  <KamaloMark className="h-20 w-20 text-background" />
+                <div className="flex aspect-square items-center justify-center rounded-2xl bg-foreground p-6">
+                  <KamaloMark variant="vector" className="h-20 w-20 text-background" />
                 </div>
-                <div className="flex aspect-square items-center justify-center rounded-2xl border border-border bg-primary">
-                  <KamaloMark className="h-20 w-20 text-primary-foreground" />
+                <div className="flex aspect-square items-center justify-center rounded-2xl border border-border bg-primary p-6">
+                  <KamaloMark variant="vector" className="h-20 w-20 text-primary-foreground" />
                 </div>
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
-                Six petals from one centre — a lotus drawn as geometry, not decoration. Keep clear
+                Six petals from one centre — drawn as geometric precision, not decoration. Keep clear
                 space of one petal on every side. Never rotate, stretch, outline or re-colour it
                 outside these three lockups.
               </p>
             </Row>
 
             <Row label="Wordmark">
-              <div className="flex flex-wrap items-center gap-10 rounded-2xl border border-border bg-surface p-8">
-                <Wordmark className="scale-125 origin-left" />
-                <Wordmark showMark={false} className="scale-125 origin-left" />
+              <div className="flex flex-wrap items-center gap-6 sm:gap-10 rounded-2xl border border-border bg-surface p-6 sm:p-8 overflow-hidden">
+                <Wordmark className="scale-100 sm:scale-125 origin-left" />
+                <Wordmark showMark={false} className="scale-100 sm:scale-125 origin-left" />
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
                 KAMALO is always set in caps, Bricolage Grotesque, tracked at 0.32em. Mark on the
@@ -113,12 +113,12 @@ function Brand() {
             </Row>
 
             <Row label="Typography">
-              <div className="rounded-2xl border border-border bg-surface p-8">
-                <p className="display text-5xl sm:text-7xl">Pay. Get more.</p>
+              <div className="rounded-2xl border border-border bg-surface p-6 sm:p-8">
+                <p className="display text-4xl sm:text-7xl">Pay. Get more.</p>
                 <p className="mt-3 font-mono text-xs text-muted-foreground">
                   Bricolage Grotesque · 700 · −0.045em
                 </p>
-                <p className="mt-8 text-lg">
+                <p className="mt-8 text-base sm:text-lg">
                   Instrument Sans carries every line of copy — plain, warm, unhurried.
                 </p>
                 <p className="mt-3 font-mono text-xs text-muted-foreground">
@@ -131,17 +131,17 @@ function Brand() {
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl border border-border bg-surface p-6">
                   <p className="eyebrow">We say</p>
-                  <p className="mt-4 text-lg">Pay. Get more.</p>
-                  <p className="text-lg">Every move counts.</p>
-                  <p className="text-lg">You could be early.</p>
+                  <p className="mt-4 text-base sm:text-lg">Pay. Get more.</p>
+                  <p className="text-base sm:text-lg">Every move counts.</p>
+                  <p className="text-base sm:text-lg">You could be early.</p>
                 </div>
                 <div className="rounded-2xl border border-dashed border-border p-6">
                   <p className="eyebrow">We never say</p>
-                  <p className="mt-4 text-lg text-muted-foreground line-through">
+                  <p className="mt-4 text-base sm:text-lg text-muted-foreground line-through">
                     Revolutionising the financial ecosystem
                   </p>
-                  <p className="text-lg text-muted-foreground line-through">Seamless synergy</p>
-                  <p className="text-lg text-muted-foreground line-through">Unlock your potential</p>
+                  <p className="text-base sm:text-lg text-muted-foreground line-through">Seamless synergy</p>
+                  <p className="text-base sm:text-lg text-muted-foreground line-through">Unlock your potential</p>
                 </div>
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
@@ -150,12 +150,12 @@ function Brand() {
             </Row>
 
             <Row label="Handles">
-              <ul className="grid gap-3 font-mono text-sm sm:grid-cols-3">
+              <ul className="grid gap-3 font-mono text-xs sm:text-sm sm:grid-cols-3">
                 <li className="rounded-xl border border-border bg-surface px-4 py-3">@kamalo · Instagram</li>
                 <li className="rounded-xl border border-border bg-surface px-4 py-3">@kamalo · X</li>
                 <li className="rounded-xl border border-border bg-surface px-4 py-3">/kamalo · LinkedIn</li>
               </ul>
-              <p className="mt-5 text-sm text-muted-foreground">hello@kamalo.in · kamalo.in</p>
+              <p className="mt-5 text-sm text-muted-foreground">hello@kamalo.app · kamalo.app</p>
             </Row>
           </div>
         </div>

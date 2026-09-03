@@ -2,18 +2,18 @@ import { Link } from "@tanstack/react-router";
 import { KamaloMark } from "./KamaloMark";
 
 const social = [
-  { label: "Instagram", handle: "@kamalo", href: "https://instagram.com/kamalo" },
-  { label: "X", handle: "@kamalo", href: "https://x.com/kamalo" },
-  { label: "LinkedIn", handle: "/kamalo", href: "https://linkedin.com/company/kamalo" },
+  { label: "Instagram", handle: "@kamalo", href: "https://kamalo.app" },
+  { label: "X", handle: "@kamalo", href: "https://kamalo.app" },
+  { label: "LinkedIn", handle: "/kamalo", href: "https://kamalo.app" },
 ];
 
 export function SiteFooter({ onJoin }: { onJoin: () => void }) {
   return (
     <footer className="hairline px-5 pt-16 pb-10 sm:px-10 sm:pt-20 sm:pb-12">
       <div className="mx-auto max-w-6xl">
-        <div className="flex items-center gap-[3vw]">
-          <KamaloMark className="h-[9vw] max-h-24 w-[9vw] max-w-24 shrink-0 text-primary/25" />
-          <p className="display text-[16vw] leading-[0.8] tracking-[-0.05em] text-foreground/10 select-none sm:text-[11rem]">
+        <div className="flex items-center gap-4 sm:gap-6 overflow-hidden">
+          <KamaloMark className="h-14 w-14 sm:h-20 sm:w-20 shrink-0" />
+          <p className="display text-[14vw] leading-[0.8] tracking-[-0.05em] text-foreground/10 select-none sm:text-[11rem]">
             KAMALO
           </p>
         </div>

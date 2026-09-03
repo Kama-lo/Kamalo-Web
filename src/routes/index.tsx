@@ -97,7 +97,7 @@ function Index() {
               </p>
             </Reveal>
             <Reveal delay={80}>
-              <h1 className="display mt-5 text-[clamp(3.2rem,13vw,9.5rem)] sm:mt-6">
+              <h1 className="display mt-5 text-[clamp(2.75rem,11vw,9.5rem)] sm:mt-6">
                 Pay.
                 <br />
                 <span className="text-ember">Get more.</span>
@@ -207,26 +207,26 @@ function Index() {
       </section>
 
       {/* SECTION 4 — COINS */}
-      <section className="hairline relative overflow-hidden px-6 py-32 sm:px-10 sm:py-44">
+      <section className="hairline relative overflow-hidden px-5 py-24 sm:px-10 sm:py-44">
         <div className="ember pointer-events-none absolute inset-x-0 bottom-[-30%] h-[80vh] opacity-60" />
-        <div ref={coinRef} className="relative mx-auto grid max-w-6xl items-center gap-16 lg:grid-cols-2">
+        <div ref={coinRef} className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <h2 className="display text-[clamp(2.6rem,7.5vw,6rem)]">Every move counts.</h2>
-            <p className="mt-8 text-lg text-muted-foreground">Collect. Unlock. Repeat.</p>
+            <h2 className="display text-[clamp(2.2rem,7vw,6rem)]">Every move counts.</h2>
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg text-muted-foreground">Collect. Unlock. Repeat.</p>
           </Reveal>
           <Reveal delay={140}>
-            <div className="relative flex items-center gap-8 rounded-3xl border border-border bg-surface/80 p-10 backdrop-blur-sm sm:p-14">
+            <div className="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl border border-border bg-surface/80 p-6 sm:p-14 backdrop-blur-sm text-center sm:text-left">
               <img
-                src={coin}
-                alt="KAMALO coin"
-                width={912}
-                height={912}
+                src="/favicon.png"
+                alt="KAMALO token"
+                width={512}
+                height={512}
                 loading="lazy"
-                className="float-slow h-24 w-24 shrink-0 sm:h-32 sm:w-32"
+                className="float-slow h-20 w-20 shrink-0 rounded-2xl sm:rounded-3xl shadow-[0_12px_36px_rgba(242,128,47,0.35)] sm:h-32 sm:w-32"
               />
               <div>
-                <p className="display text-6xl text-reward tabular-nums sm:text-7xl">+{coins}</p>
-                <p className="eyebrow mt-3">Kamalo coins</p>
+                <p className="display text-5xl text-reward tabular-nums sm:text-7xl">+{coins}</p>
+                <p className="eyebrow mt-2 sm:mt-3">Kamalo coins</p>
               </div>
             </div>
           </Reveal>
@@ -234,20 +234,20 @@ function Index() {
       </section>
 
       {/* SECTION 5 — EXCLUSIVITY */}
-      <section className="hairline px-6 py-32 text-center sm:px-10 sm:py-52">
+      <section className="hairline px-5 py-24 text-center sm:px-10 sm:py-52">
         <div className="mx-auto max-w-4xl">
           <Reveal>
-            <h2 className="display text-[clamp(3rem,10vw,8rem)]">You could be early.</h2>
+            <h2 className="display text-[clamp(2.4rem,8.5vw,8rem)]">You could be early.</h2>
           </Reveal>
           <Reveal delay={120}>
-            <p className="mx-auto mt-8 max-w-md text-lg text-muted-foreground">
+            <p className="mx-auto mt-6 max-w-md text-base sm:text-lg text-muted-foreground">
               Join the KAMALO list and hear it first when we open.
             </p>
           </Reveal>
           <Reveal delay={200}>
             <button
               onClick={open}
-              className="cta-surface mt-12 rounded-full px-12 py-6 text-sm font-semibold tracking-[0.2em] uppercase"
+              className="cta-surface mt-10 w-full sm:w-auto rounded-full px-12 py-5 sm:py-6 text-sm font-semibold tracking-[0.2em] uppercase"
             >
               Join KAMALO
             </button>
@@ -257,16 +257,23 @@ function Index() {
 
       <SiteFooter onJoin={open} />
 
-      {/* Mobile sticky CTA */}
-      <div className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/85 p-4 backdrop-blur-xl sm:hidden">
+      {/* Mobile sticky CTA — only shown once scrolled past hero */}
+      <div
+        className={`fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/90 p-4 pb-[max(1rem,env(safe-area-inset-bottom))] backdrop-blur-xl transition-all duration-300 sm:hidden ${
+          scrollY > 400
+            ? "translate-y-0 opacity-100 pointer-events-auto"
+            : "translate-y-full opacity-0 pointer-events-none"
+        }`}
+        aria-hidden={scrollY <= 400}
+      >
         <button
           onClick={open}
-          className="cta-surface w-full rounded-full py-4 text-sm font-semibold tracking-[0.2em] uppercase"
+          className="cta-surface w-full rounded-full py-3.5 text-xs font-semibold tracking-[0.2em] uppercase shadow-lg"
         >
           Join KAMALO
         </button>
       </div>
-      <div className="h-20 sm:hidden" />
+      {scrollY > 400 && <div className="h-20 sm:hidden" />}
 
       <JoinModal open={joinOpen} onClose={() => setJoinOpen(false)} />
     </div>
