@@ -30,6 +30,12 @@ export function SiteFooter({ onJoin }: { onJoin: () => void }) {
             >
               About
             </Link>
+            <Link
+              to="/marketplace"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Marketplace
+            </Link>
             <button
               onClick={onJoin}
               className="text-muted-foreground transition-colors hover:text-foreground"

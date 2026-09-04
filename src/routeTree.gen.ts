@@ -13,9 +13,11 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BrandRouteImport } from './routes/brand'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as MarketplaceRouteImport } from './routes/marketplace'
 import { Route as PaymentsRouteImport } from './routes/payments'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
+import { Route as MarketplaceProductIdRouteImport } from './routes/marketplace_.$productId'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -37,6 +39,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarketplaceRoute = MarketplaceRouteImport.update({
+  id: '/marketplace',
+  path: '/marketplace',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PaymentsRoute = PaymentsRouteImport.update({
   id: '/payments',
   path: '/payments',
@@ -52,24 +59,33 @@ const TermsRoute = TermsRouteImport.update({
   path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MarketplaceProductIdRoute = MarketplaceProductIdRouteImport.update({
+  id: '/marketplace_/$productId',
+  path: '/marketplace/$productId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/marketplace': typeof MarketplaceRoute
   '/payments': typeof PaymentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/marketplace/$productId': typeof MarketplaceProductIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/marketplace': typeof MarketplaceRoute
   '/payments': typeof PaymentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/marketplace/$productId': typeof MarketplaceProductIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,26 +93,46 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/marketplace': typeof MarketplaceRoute
   '/payments': typeof PaymentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
+  '/marketplace_/$productId': typeof MarketplaceProductIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
-    '/' | '/about' | '/brand' | '/contact' | '/payments' | '/privacy' | '/terms'
+    | '/'
+    | '/about'
+    | '/brand'
+    | '/contact'
+    | '/marketplace'
+    | '/payments'
+    | '/privacy'
+    | '/terms'
+    | '/marketplace/$productId'
   fileRoutesByTo: FileRoutesByTo
   to:
-    '/' | '/about' | '/brand' | '/contact' | '/payments' | '/privacy' | '/terms'
+    | '/'
+    | '/about'
+    | '/brand'
+    | '/contact'
+    | '/marketplace'
+    | '/payments'
+    | '/privacy'
+    | '/terms'
+    | '/marketplace/$productId'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/brand'
     | '/contact'
+    | '/marketplace'
     | '/payments'
     | '/privacy'
     | '/terms'
+    | '/marketplace_/$productId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -104,9 +140,11 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BrandRoute: typeof BrandRoute
   ContactRoute: typeof ContactRoute
+  MarketplaceRoute: typeof MarketplaceRoute
   PaymentsRoute: typeof PaymentsRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
+  MarketplaceProductIdRoute: typeof MarketplaceProductIdRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -139,6 +177,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/marketplace': {
+      id: '/marketplace'
+      path: '/marketplace'
+      fullPath: '/marketplace'
+      preLoaderRoute: typeof MarketplaceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/payments': {
       id: '/payments'
       path: '/payments'
@@ -160,6 +205,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/marketplace_/$productId': {
+      id: '/marketplace_/$productId'
+      path: '/marketplace/$productId'
+      fullPath: '/marketplace/$productId'
+      preLoaderRoute: typeof MarketplaceProductIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -168,9 +220,11 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BrandRoute: BrandRoute,
   ContactRoute: ContactRoute,
+  MarketplaceRoute: MarketplaceRoute,
   PaymentsRoute: PaymentsRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
+  MarketplaceProductIdRoute: MarketplaceProductIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

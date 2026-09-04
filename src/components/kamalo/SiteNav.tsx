@@ -34,6 +34,12 @@ export function SiteNav({ onJoin }: { onJoin: () => void }) {
             About
           </Link>
           <Link
+            to="/marketplace"
+            className="hidden text-muted-foreground transition-colors hover:text-foreground sm:block"
+          >
+            Marketplace
+          </Link>
+          <Link
             to="/payments"
             className="hidden text-muted-foreground transition-colors hover:text-foreground sm:block"
           >
@@ -81,6 +87,13 @@ export function SiteNav({ onJoin }: { onJoin: () => void }) {
               className="flex items-center justify-between py-1 text-muted-foreground transition-colors hover:text-foreground"
             >
               About
+            </Link>
+            <Link
+              to="/marketplace"
+              onClick={closeMenu}
+              className="flex items-center justify-between py-1 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Marketplace
             </Link>
             <Link
               to="/payments"
