@@ -1,5 +1,5 @@
+import { Link } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
-import coin from "@/assets/kamalo-coin.png";
 
 type Stage = "form" | "done";
 
@@ -78,7 +78,7 @@ export function JoinModal({ open, onClose }: { open: boolean; onClose: () => voi
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-end justify-center p-3 sm:p-4 sm:items-center"
+      className="fixed inset-0 z-50 flex items-end justify-center p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:p-4 sm:items-center"
       role="dialog"
       aria-modal="true"
       aria-label="Join KAMALO"
@@ -119,7 +119,7 @@ export function JoinModal({ open, onClose }: { open: boolean; onClose: () => voi
                   placeholder="Mobile number"
                   value={phone}
                   onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
-                  className="w-full bg-transparent text-lg tracking-wide outline-none placeholder:text-muted-foreground"
+                  className="w-full bg-transparent text-lg text-foreground tracking-wide outline-none placeholder:text-muted-foreground"
                 />
               </div>
               {error && <p className="mt-3 text-sm text-destructive">{error}</p>}
@@ -132,7 +132,15 @@ export function JoinModal({ open, onClose }: { open: boolean; onClose: () => voi
                 {busy ? "Adding you…" : "Get me in"}
               </button>
               <p className="mt-4 text-xs text-muted-foreground">
-                By joining you agree to our Terms and Privacy Policy.
+                By joining you agree to our{" "}
+                <Link to="/terms" onClick={onClose} className="underline hover:text-foreground">
+                  Terms
+                </Link>{" "}
+                and{" "}
+                <Link to="/privacy" onClick={onClose} className="underline hover:text-foreground">
+                  Privacy Policy
+                </Link>
+                .
               </p>
             </form>
           ) : (
@@ -159,7 +167,7 @@ export function JoinModal({ open, onClose }: { open: boolean; onClose: () => voi
 
               <button
                 onClick={share}
-                className="mt-4 w-full rounded-2xl border border-input px-8 py-4 text-sm font-semibold tracking-[0.18em] uppercase transition-colors hover:bg-accent"
+                className="mt-4 w-full rounded-2xl border border-input px-8 py-4 text-sm font-semibold text-foreground tracking-[0.18em] uppercase transition-colors hover:bg-accent"
               >
                 {copied ? "Copied" : "Share your code"}
               </button>

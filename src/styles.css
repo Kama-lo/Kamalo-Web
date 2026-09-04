@@ -148,6 +148,20 @@
     color: var(--color-foreground);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
+    transition:
+      background-color 0.25s ease,
+      color 0.25s ease,
+      border-color 0.25s ease;
+  }
+
+  header,
+  footer,
+  aside,
+  article,
+  section {
+    transition:
+      background-color 0.25s ease,
+      border-color 0.25s ease;
   }
 
   ::selection {
@@ -156,11 +170,60 @@
   }
 }
 
+/* Core Brand Classes & Utilities */
+.display {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.95;
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--muted-foreground);
+}
+
+.ember {
+  background-image: var(--gradient-ember);
+}
+
+.text-ember {
+  background-image: var(--gradient-cta);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.cta-surface {
+  background-image: var(--gradient-cta);
+  color: var(--primary-foreground);
+  box-shadow: var(--shadow-cta);
+  transition:
+    transform 0.4s var(--ease-kamalo),
+    filter 0.4s var(--ease-kamalo);
+}
+
+.cta-surface:hover {
+  transform: translateY(-2px) scale(1.015);
+  filter: brightness(1.06);
+}
+
+.cta-surface:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.hairline {
+  border-top: 1px solid var(--border);
+}
+
 @utility display {
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: -0.045em;
-  line-height: 0.9;
+  line-height: 0.95;
 }
 
 @utility eyebrow {
@@ -178,6 +241,7 @@
 @utility text-ember {
   background-image: var(--gradient-cta);
   background-clip: text;
+  -webkit-background-clip: text;
   color: transparent;
 }
 
@@ -201,18 +265,6 @@
   border-top: 1px solid var(--border);
 }
 
-@utility reveal {
-  opacity: 0;
-  transform: translateY(28px);
-  transition:
-    opacity 0.9s var(--ease-kamalo),
-    transform 0.9s var(--ease-kamalo);
-  &[data-shown="true"] {
-    opacity: 1;
-    transform: none;
-  }
-}
-
 @utility float-slow {
   animation: kamalo-float 9s ease-in-out infinite;
 }
@@ -233,5 +285,10 @@
   *::after {
     animation-duration: 0.001ms !important;
     transition-duration: 0.001ms !important;
+  }
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

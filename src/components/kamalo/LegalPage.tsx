@@ -139,7 +139,7 @@ export function LegalPage({
 
             {/* Document Content */}
             <article
-              className={`space-y-10 sm:space-y-12 text-[0.925rem] sm:text-[0.95rem] leading-relaxed text-muted-foreground min-w-0 ${
+              className={`space-y-10 sm:space-y-12 text-[0.925rem] sm:text-[0.95rem] leading-relaxed text-muted-foreground min-w-0 break-words ${
                 !toc || toc.length === 0 ? "lg:col-span-2 max-w-3xl" : ""
               }`}
             >

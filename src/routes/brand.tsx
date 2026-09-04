@@ -110,9 +110,14 @@ function Brand() {
 
             <Row label="Palette">
               <div className="grid grid-cols-2 gap-4 sm:grid-cols-5">
-                {palette.map((c) => (
-                  <div key={c.name} className="overflow-hidden rounded-2xl border border-border">
-                    <div className={`h-20 w-full ${c.cls}`} />
+                {palette.map((c, i) => (
+                  <div
+                    key={c.name}
+                    className={`overflow-hidden rounded-2xl border border-border ${
+                      i === palette.length - 1 ? "col-span-2 sm:col-span-1" : ""
+                    }`}
+                  >
+                    <div className={`h-20 w-full border-b border-border ${c.cls}`} />
                     <div className="bg-surface p-3">
                       <p className="text-sm font-semibold">{c.name}</p>
                       <p className="mt-1 font-mono text-[0.65rem] text-muted-foreground">

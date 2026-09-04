@@ -19,7 +19,7 @@ export function SiteNav({ onJoin }: { onJoin: () => void }) {
   const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="fixed top-0 right-0 left-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl">
+    <header className="fixed top-0 right-0 left-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-xl transition-colors duration-200">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-3.5 sm:px-10 sm:py-4">
         <Link to="/" aria-label="KAMALO home" onClick={closeMenu}>
           <Wordmark />
@@ -73,7 +73,7 @@ export function SiteNav({ onJoin }: { onJoin: () => void }) {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="border-t border-border bg-background/95 px-5 py-6 backdrop-blur-2xl sm:hidden animate-fade-in">
+        <div className="max-h-[calc(100svh-4.5rem)] overflow-y-auto border-t border-border bg-background/95 px-5 py-6 backdrop-blur-2xl sm:hidden animate-fade-in">
           <nav className="flex flex-col space-y-4 text-base font-medium">
             <Link
               to="/about"

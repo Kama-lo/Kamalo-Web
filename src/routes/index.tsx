@@ -221,7 +221,7 @@ function Index() {
           <Reveal delay={140}>
             <div className="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl border border-border bg-surface/80 p-6 sm:p-14 backdrop-blur-sm text-center sm:text-left">
               <img
-                src="/favicon.png"
+                src={coin}
                 alt="KAMALO token"
                 width={512}
                 height={512}

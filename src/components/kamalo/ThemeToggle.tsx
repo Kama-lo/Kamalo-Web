@@ -6,11 +6,38 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
   const [theme, setTheme] = useState<Theme>("dark");
 
   useEffect(() => {
+    const getSystemTheme = (): Theme =>
+      window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark";
+
     const stored = localStorage.getItem("kamalo-theme") as Theme | null;
-    const next: Theme =
-      stored ?? (window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
-    setTheme(next);
-    document.documentElement.classList.toggle("dark", next === "dark");
+    const initial: Theme = stored ?? getSystemTheme();
+    setTheme(initial);
+    document.documentElement.classList.toggle("dark", initial === "dark");
+
+    // Listen to system color scheme changes if user hasn't explicitly set a preference
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: light)");
+    const handleMediaChange = (e: MediaQueryListEvent) => {
+      if (!localStorage.getItem("kamalo-theme")) {
+        const next: Theme = e.matches ? "light" : "dark";
+        setTheme(next);
+        document.documentElement.classList.toggle("dark", next === "dark");
+      }
+    };
+    mediaQuery.addEventListener("change", handleMediaChange);
+
+    // Sync theme across browser tabs
+    const handleStorage = (e: StorageEvent) => {
+      if (e.key === "kamalo-theme" && (e.newValue === "light" || e.newValue === "dark")) {
+        setTheme(e.newValue);
+        document.documentElement.classList.toggle("dark", e.newValue === "dark");
+      }
+    };
+    window.addEventListener("storage", handleStorage);
+
+    return () => {
+      mediaQuery.removeEventListener("change", handleMediaChange);
+      window.removeEventListener("storage", handleStorage);
+    };
   }, []);
 
   const toggle = () => {
