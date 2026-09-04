@@ -313,15 +313,11 @@ function Payments() {
               <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
                 Once KAMALO launches, completing a payment is intended to trigger an immediate
                 confirmation, with any eligible rewards credited to your KAMALO account ledger.
-                Reward accrual, clearing, and payout mechanics are described in full under{" "}
+                Reward accrual, clearing, and payout mechanics are described in full under the{" "}
                 <Link to="/terms#rewards-referrals" className="text-primary hover:underline">
                   Rewards &amp; Commissions
                 </Link>{" "}
-                and{" "}
-                <Link to="/terms#rupay-card" className="text-primary hover:underline">
-                  the KAMALO RuPay Card
-                </Link>{" "}
-                sections of our Terms of Service.
+                section of our Terms of Service.
               </p>
             </Reveal>
           </section>
@@ -391,7 +387,7 @@ function Payments() {
                     <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
                   </div>
                   <p className="mt-2 text-xs text-muted-foreground sm:text-sm">
-                    Rewards, referral commissions, card fees, and payout rules.
+                    Rewards, referral commissions, and payout rules.
                   </p>
                 </Link>
                 <Link

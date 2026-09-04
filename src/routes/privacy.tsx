@@ -107,7 +107,7 @@ function Privacy() {
           <div className="rounded-xl border border-border bg-surface/40 p-4 space-y-1.5">
             <p className="font-semibold text-foreground">C. KYC & Statutory Financial Data</p>
             <p className="text-muted-foreground">
-              For reward disbursements and RuPay Card issuance: Permanent Account Number (PAN), masked Aadhaar data,
+              For reward disbursements and statutory compliance: Permanent Account Number (PAN), masked Aadhaar data,
               Voter ID / Driving License / Passport copies, and bank verification details (account number, IFSC, cancelled cheque).
             </p>
           </div>
@@ -206,11 +206,11 @@ function Privacy() {
           <div className="rounded-xl border border-border bg-surface/40 p-4 space-y-1">
             <p className="font-semibold text-foreground flex items-center gap-1.5">
               <Share2 className="h-3.5 w-3.5 text-primary" />
-              Banking & RuPay Network Partners
+              Banking & Payout Partners
             </p>
             <p className="text-muted-foreground">
-              Shared with RBI-licensed banking institutions, PPI issuers, and NPCI for RuPay card personalization,
-              activation, and transaction processing.
+              Shared with RBI-licensed banking institutions and payment partners for account verification,
+              direct payout disbursements, and transaction clearing.
             </p>
           </div>
           <div className="rounded-xl border border-border bg-surface/40 p-4 space-y-1">
