@@ -13,6 +13,7 @@ export const Route = createFileRoute("/contact")({
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://kamalo.app/contact" }],
   }),
   component: Contact,
 });
@@ -46,7 +47,7 @@ function Contact() {
               Customer Support Desk
             </div>
             <p className="text-xs text-muted-foreground">
-              Help with accounts, rewards, card assistance, and data privacy.
+              Help with accounts, rewards, and data privacy.
             </p>
             <a href="mailto:support@kamalo.app" className="block font-mono text-sm text-primary hover:underline pt-1">
               support@kamalo.app
@@ -59,7 +60,7 @@ function Contact() {
               Partnerships & Merchants
             </div>
             <p className="text-xs text-muted-foreground">
-              Brand collaborations, RuPay merchant network, and fintech integrations.
+              Brand collaborations, merchant network, and fintech integrations.
             </p>
             <a href="mailto:partners@kamalo.app" className="block font-mono text-sm text-primary hover:underline pt-1">
               partners@kamalo.app

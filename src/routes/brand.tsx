@@ -25,6 +25,7 @@ export const Route = createFileRoute("/brand")({
       { property: "og:type", content: "article" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
+    links: [{ rel: "canonical", href: "https://kamalo.app/brand" }],
   }),
   component: Brand,
 });
