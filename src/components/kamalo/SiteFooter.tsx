@@ -24,25 +24,46 @@ export function SiteFooter({ onJoin }: { onJoin: () => void }) {
             <br />A little more rewarding.
           </p>
           <nav className="flex flex-wrap gap-x-6 gap-y-3 text-sm">
-            <Link to="/about" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link
+              to="/about"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               About
             </Link>
-            <button onClick={onJoin} className="text-muted-foreground transition-colors hover:text-foreground">
+            <button
+              onClick={onJoin}
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Join
             </button>
-            <Link to="/payments" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link
+              to="/payments"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Payments
             </Link>
-            <Link to="/brand" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link
+              to="/brand"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Brand
             </Link>
-            <Link to="/privacy" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link
+              to="/privacy"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Privacy
             </Link>
-            <Link to="/terms" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link
+              to="/terms"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Terms
             </Link>
-            <Link to="/contact" className="text-muted-foreground transition-colors hover:text-foreground">
+            <Link
+              to="/contact"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
               Contact
             </Link>
           </nav>

@@ -26,7 +26,13 @@ export function ThemeToggle({ className = "" }: { className?: string }) {
       aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} theme`}
       className={`grid h-9 w-9 place-items-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-foreground ${className}`}
     >
-      <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg
+        viewBox="0 0 24 24"
+        className="h-4 w-4"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.6"
+      >
         {theme === "dark" ? (
           <>
             <circle cx="12" cy="12" r="4.2" />

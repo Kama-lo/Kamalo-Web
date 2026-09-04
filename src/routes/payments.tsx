@@ -141,8 +141,8 @@ function Payments() {
               <Link to="/about" className="text-primary hover:underline">
                 read more about KAMALO
               </Link>
-              . This page explains, in plain terms, how a payment is meant to flow through
-              KAMALO and the security principles behind that flow.
+              . This page explains, in plain terms, how a payment is meant to flow through KAMALO
+              and the security principles behind that flow.
             </p>
           </Reveal>
 
@@ -222,8 +222,8 @@ function Payments() {
               </h2>
               <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
                 KAMALO is designed to integrate with authorised payment infrastructure. These are
-                the security and infrastructure principles our payment architecture is being
-                built around.
+                the security and infrastructure principles our payment architecture is being built
+                around.
               </p>
             </Reveal>
 
@@ -307,14 +307,12 @@ function Payments() {
           <section className="hairline mt-16 pt-16 sm:mt-24 sm:pt-24">
             <Reveal>
               <p className="eyebrow">After payment</p>
-              <h2 className="display mt-4 text-[clamp(1.8rem,5vw,3.5rem)]">
-                What happens next.
-              </h2>
+              <h2 className="display mt-4 text-[clamp(1.8rem,5vw,3.5rem)]">What happens next.</h2>
               <p className="mt-5 max-w-2xl text-base text-muted-foreground sm:text-lg">
                 Once KAMALO launches, completing a payment is intended to trigger an immediate
                 confirmation, with any eligible rewards credited to your KAMALO account ledger.
                 Reward accrual, clearing, and payout mechanics are described in full under the{" "}
-                <Link to="/terms#rewards-referrals" className="text-primary hover:underline">
+                <Link to="/terms" hash="rewards-referrals" className="text-primary hover:underline">
                   Rewards &amp; Commissions
                 </Link>{" "}
                 section of our Terms of Service.

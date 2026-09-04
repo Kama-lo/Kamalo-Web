@@ -153,8 +153,6 @@ function Index() {
         </div>
       </section>
 
-
-
       {/* SECTION 2 — THE IDEA */}
       <section id="idea" className="hairline px-6 py-32 sm:px-10 sm:py-44">
         <div className="mx-auto max-w-6xl">
@@ -210,10 +208,15 @@ function Index() {
       {/* SECTION 4 — COINS */}
       <section className="hairline relative overflow-hidden px-5 py-24 sm:px-10 sm:py-44">
         <div className="ember pointer-events-none absolute inset-x-0 bottom-[-30%] h-[80vh] opacity-60" />
-        <div ref={coinRef} className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div
+          ref={coinRef}
+          className="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16"
+        >
           <Reveal>
             <h2 className="display text-[clamp(2.2rem,7vw,6rem)]">Every move counts.</h2>
-            <p className="mt-6 sm:mt-8 text-base sm:text-lg text-muted-foreground">Collect. Unlock. Repeat.</p>
+            <p className="mt-6 sm:mt-8 text-base sm:text-lg text-muted-foreground">
+              Collect. Unlock. Repeat.
+            </p>
           </Reveal>
           <Reveal delay={140}>
             <div className="relative flex flex-col sm:flex-row items-center gap-6 sm:gap-8 rounded-3xl border border-border bg-surface/80 p-6 sm:p-14 backdrop-blur-sm text-center sm:text-left">

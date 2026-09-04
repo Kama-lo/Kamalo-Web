@@ -44,7 +44,6 @@ export function JoinModal({ open, onClose }: { open: boolean; onClose: () => voi
     return () => clearTimeout(t);
   }, [open]);
 
-
   if (!open) return null;
 
   const submit = (e: React.FormEvent) => {

@@ -31,8 +31,18 @@ export const Route = createFileRoute("/brand")({
 });
 
 const palette = [
-  { name: "Ink", token: "--background (dark)", cls: "bg-[oklch(0.158_0.012_58)]", note: "Canvas, night" },
-  { name: "Paper", token: "--background (light)", cls: "bg-[oklch(0.973_0.013_86)]", note: "Canvas, day" },
+  {
+    name: "Ink",
+    token: "--background (dark)",
+    cls: "bg-[oklch(0.158_0.012_58)]",
+    note: "Canvas, night",
+  },
+  {
+    name: "Paper",
+    token: "--background (light)",
+    cls: "bg-[oklch(0.973_0.013_86)]",
+    note: "Canvas, day",
+  },
   { name: "Ember Saffron", token: "--primary", cls: "bg-primary", note: "The KAMALO colour" },
   { name: "Coin Ochre", token: "--reward", cls: "bg-reward", note: "Rewards only" },
   { name: "Ash", token: "--muted-foreground", cls: "bg-muted-foreground", note: "Secondary copy" },
@@ -67,7 +77,11 @@ function Brand() {
             <Row label="The mark">
               <div className="grid gap-4 sm:grid-cols-3">
                 <div className="flex aspect-square items-center justify-center rounded-2xl border border-border bg-surface p-6">
-                  <img src="/favicon.png" alt="KAMALO mark" className="h-20 w-20 rounded-2xl shadow-lg" />
+                  <img
+                    src="/favicon.png"
+                    alt="KAMALO mark"
+                    className="h-20 w-20 rounded-2xl shadow-lg"
+                  />
                 </div>
                 <div className="flex aspect-square items-center justify-center rounded-2xl bg-foreground p-6">
                   <KamaloMark variant="vector" className="h-20 w-20 text-background" />
@@ -77,9 +91,9 @@ function Brand() {
                 </div>
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
-                Six petals from one centre — drawn as geometric precision, not decoration. Keep clear
-                space of one petal on every side. Never rotate, stretch, outline or re-colour it
-                outside these three lockups.
+                Six petals from one centre — drawn as geometric precision, not decoration. Keep
+                clear space of one petal on every side. Never rotate, stretch, outline or re-colour
+                it outside these three lockups.
               </p>
             </Row>
 
@@ -101,7 +115,9 @@ function Brand() {
                     <div className={`h-20 w-full ${c.cls}`} />
                     <div className="bg-surface p-3">
                       <p className="text-sm font-semibold">{c.name}</p>
-                      <p className="mt-1 font-mono text-[0.65rem] text-muted-foreground">{c.token}</p>
+                      <p className="mt-1 font-mono text-[0.65rem] text-muted-foreground">
+                        {c.token}
+                      </p>
                       <p className="mt-1 text-xs text-muted-foreground">{c.note}</p>
                     </div>
                   </div>
@@ -141,8 +157,12 @@ function Brand() {
                   <p className="mt-4 text-base sm:text-lg text-muted-foreground line-through">
                     Revolutionising the financial ecosystem
                   </p>
-                  <p className="text-base sm:text-lg text-muted-foreground line-through">Seamless synergy</p>
-                  <p className="text-base sm:text-lg text-muted-foreground line-through">Unlock your potential</p>
+                  <p className="text-base sm:text-lg text-muted-foreground line-through">
+                    Seamless synergy
+                  </p>
+                  <p className="text-base sm:text-lg text-muted-foreground line-through">
+                    Unlock your potential
+                  </p>
                 </div>
               </div>
               <p className="mt-5 text-sm text-muted-foreground">
@@ -152,9 +172,15 @@ function Brand() {
 
             <Row label="Handles">
               <ul className="grid gap-3 font-mono text-xs sm:text-sm sm:grid-cols-3">
-                <li className="rounded-xl border border-border bg-surface px-4 py-3">@kamalo · Instagram</li>
-                <li className="rounded-xl border border-border bg-surface px-4 py-3">@kamalo · X</li>
-                <li className="rounded-xl border border-border bg-surface px-4 py-3">/kamalo · LinkedIn</li>
+                <li className="rounded-xl border border-border bg-surface px-4 py-3">
+                  @kamalo · Instagram
+                </li>
+                <li className="rounded-xl border border-border bg-surface px-4 py-3">
+                  @kamalo · X
+                </li>
+                <li className="rounded-xl border border-border bg-surface px-4 py-3">
+                  /kamalo · LinkedIn
+                </li>
               </ul>
               <p className="mt-5 text-sm text-muted-foreground">hello@kamalo.app · kamalo.app</p>
             </Row>

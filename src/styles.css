@@ -134,7 +134,6 @@
   --shadow-deep: 0 40px 120px -40px oklch(0 0 0 / 80%);
 }
 
-
 @layer base {
   * {
     border-color: var(--color-border);

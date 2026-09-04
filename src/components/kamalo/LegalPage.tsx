@@ -79,7 +79,9 @@ export function LegalPage({
           <div className="max-w-3xl">
             <p className="eyebrow">{eyebrow}</p>
             <h1 className="display mt-4 sm:mt-5 text-[clamp(2.2rem,6vw,4.5rem)]">{title}</h1>
-            {subtitle && <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">{subtitle}</p>}
+            {subtitle && (
+              <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">{subtitle}</p>
+            )}
             {updated && (
               <div className="mt-4 sm:mt-5 inline-flex items-center gap-2 rounded-lg border border-border bg-surface/50 px-3 py-1.5 font-mono text-[0.75rem] text-muted-foreground">
                 <span className="h-1.5 w-1.5 rounded-full bg-primary" />
@@ -93,7 +95,8 @@ export function LegalPage({
             <div className="flex flex-col gap-3 text-xs sm:flex-row sm:items-center sm:justify-between">
               <div className="space-y-1 min-w-0">
                 <p className="font-semibold text-foreground break-words">
-                  Kamal Intellect Private Limited · Platform: <span className="font-mono text-primary">kamalo.app</span>
+                  Kamal Intellect Private Limited · Platform:{" "}
+                  <span className="font-mono text-primary">kamalo.app</span>
                 </p>
                 <p className="text-muted-foreground">
                   Governed under the laws of India · Jurisdiction: Mumbai, Maharashtra, India

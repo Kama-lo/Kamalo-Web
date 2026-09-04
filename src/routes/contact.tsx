@@ -7,9 +7,16 @@ export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
       { title: "Contact & Support — KAMALO | Kamal Intellect Private Limited" },
-      { name: "description", content: "Reach the KAMALO team and Customer Support Desk — press, partnerships and support." },
+      {
+        name: "description",
+        content:
+          "Reach the KAMALO team and Customer Support Desk — press, partnerships and support.",
+      },
       { property: "og:title", content: "Contact KAMALO" },
-      { property: "og:description", content: "Press, partnerships, support, and account assistance." },
+      {
+        property: "og:description",
+        content: "Press, partnerships, support, and account assistance.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -36,7 +43,10 @@ function Contact() {
             <p className="text-xs text-muted-foreground">
               Questions about our upcoming launch, waitlist, or invite codes.
             </p>
-            <a href="mailto:hello@kamalo.app" className="block font-mono text-sm text-primary hover:underline pt-1">
+            <a
+              href="mailto:hello@kamalo.app"
+              className="block font-mono text-sm text-primary hover:underline pt-1"
+            >
               hello@kamalo.app
             </a>
           </div>
@@ -49,7 +59,10 @@ function Contact() {
             <p className="text-xs text-muted-foreground">
               Help with accounts, rewards, and data privacy.
             </p>
-            <a href="mailto:support@kamalo.app" className="block font-mono text-sm text-primary hover:underline pt-1">
+            <a
+              href="mailto:support@kamalo.app"
+              className="block font-mono text-sm text-primary hover:underline pt-1"
+            >
               support@kamalo.app
             </a>
           </div>
@@ -62,7 +75,10 @@ function Contact() {
             <p className="text-xs text-muted-foreground">
               Brand collaborations, merchant network, and fintech integrations.
             </p>
-            <a href="mailto:partners@kamalo.app" className="block font-mono text-sm text-primary hover:underline pt-1">
+            <a
+              href="mailto:partners@kamalo.app"
+              className="block font-mono text-sm text-primary hover:underline pt-1"
+            >
               partners@kamalo.app
             </a>
           </div>
