@@ -13,6 +13,7 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as BrandRouteImport } from './routes/brand'
 import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PaymentsRouteImport } from './routes/payments'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as TermsRouteImport } from './routes/terms'
 
@@ -36,6 +37,11 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PaymentsRoute = PaymentsRouteImport.update({
+  id: '/payments',
+  path: '/payments',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
@@ -52,6 +58,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/payments': typeof PaymentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
 }
@@ -60,6 +67,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/payments': typeof PaymentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
 }
@@ -69,16 +77,26 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/brand': typeof BrandRoute
   '/contact': typeof ContactRoute
+  '/payments': typeof PaymentsRoute
   '/privacy': typeof PrivacyRoute
   '/terms': typeof TermsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/brand' | '/contact' | '/privacy' | '/terms'
+  fullPaths:
+    '/' | '/about' | '/brand' | '/contact' | '/payments' | '/privacy' | '/terms'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/brand' | '/contact' | '/privacy' | '/terms'
+  to:
+    '/' | '/about' | '/brand' | '/contact' | '/payments' | '/privacy' | '/terms'
   id:
-    '__root__' | '/' | '/about' | '/brand' | '/contact' | '/privacy' | '/terms'
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/brand'
+    | '/contact'
+    | '/payments'
+    | '/privacy'
+    | '/terms'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -86,6 +104,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BrandRoute: typeof BrandRoute
   ContactRoute: typeof ContactRoute
+  PaymentsRoute: typeof PaymentsRoute
   PrivacyRoute: typeof PrivacyRoute
   TermsRoute: typeof TermsRoute
 }
@@ -120,6 +139,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/payments': {
+      id: '/payments'
+      path: '/payments'
+      fullPath: '/payments'
+      preLoaderRoute: typeof PaymentsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/privacy': {
       id: '/privacy'
       path: '/privacy'
@@ -142,6 +168,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BrandRoute: BrandRoute,
   ContactRoute: ContactRoute,
+  PaymentsRoute: PaymentsRoute,
   PrivacyRoute: PrivacyRoute,
   TermsRoute: TermsRoute,
 }

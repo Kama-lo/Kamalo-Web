@@ -111,12 +111,31 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 const themeScript = `(function(){try{var s=localStorage.getItem('kamalo-theme');var d=s?s==='dark':!window.matchMedia('(prefers-color-scheme: light)').matches;document.documentElement.classList.toggle('dark',d);}catch(e){}})();`;
 
+const organizationSchema = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "KAMALO",
+  legalName: "Kamal Intellect Private Limited",
+  url: "https://kamalo.app",
+  email: "hello@kamalo.app",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mumbai",
+    addressRegion: "Maharashtra",
+    addressCountry: "IN",
+  },
+});
+
 function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <head>
         <HeadContent />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: organizationSchema }}
+        />
       </head>
       <body>
         {children}
