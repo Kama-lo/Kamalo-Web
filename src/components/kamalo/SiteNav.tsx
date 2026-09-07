@@ -117,6 +117,14 @@ export function SiteNav({ onJoin }: { onJoin: () => void }) {
               Terms of Service
             </Link>
             <Link
+              to="/terms"
+              hash="cancellation-refunds"
+              onClick={closeMenu}
+              className="flex items-center justify-between py-1 text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Cancellation & Refunds
+            </Link>
+            <Link
               to="/privacy"
               onClick={closeMenu}
               className="flex items-center justify-between py-1 text-muted-foreground transition-colors hover:text-foreground"

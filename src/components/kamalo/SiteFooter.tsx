@@ -67,6 +67,13 @@ export function SiteFooter({ onJoin }: { onJoin: () => void }) {
               Terms
             </Link>
             <Link
+              to="/terms"
+              hash="cancellation-refunds"
+              className="text-muted-foreground transition-colors hover:text-foreground"
+            >
+              Refunds
+            </Link>
+            <Link
               to="/contact"
               className="text-muted-foreground transition-colors hover:text-foreground"
             >

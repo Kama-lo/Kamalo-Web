@@ -7,6 +7,7 @@ import {
   Landmark,
   AlertTriangle,
   FileCheck,
+  RefreshCw,
 } from "lucide-react";
 
 import { LegalPage, type TocItem } from "@/components/kamalo/LegalPage";
@@ -39,6 +40,7 @@ const TOC: TocItem[] = [
   { id: "kyc-compliance", title: "Mandatory KYC Verification" },
   { id: "rewards-referrals", title: "Rewards & 5-Tier Commissions" },
   { id: "merchant-settlements", title: "Partner Merchant Settlements" },
+  { id: "cancellation-refunds", title: "Cancellation & Refund Policy" },
   { id: "communication", title: "Communication Policy" },
   { id: "prohibited-conduct", title: "Prohibited Conduct & Brand IP" },
   { id: "inactivity-termination", title: "Inactivity & Termination" },
@@ -326,11 +328,103 @@ function Terms() {
         </div>
       </section>
 
-      {/* 6. Communication Policy */}
-      <section id="communication" className="scroll-mt-32 space-y-4">
+      {/* 6. Cancellation, Returns & Refund Policy */}
+      <section id="cancellation-refunds" className="scroll-mt-32 space-y-4">
         <div className="flex items-center gap-2">
           <span className="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-semibold text-primary">
             06
+          </span>
+          <h2 className="text-xl font-bold text-foreground">
+            Cancellation, Return & Refund Policy
+          </h2>
+        </div>
+        <p>
+          At <strong>KAMALO</strong>, operated by Kamal Intellect Private Limited, we aim to provide
+          a transparent and seamless payment and reward experience. In accordance with the Consumer
+          Protection (E-Commerce) Rules, 2020 and applicable Reserve Bank of India (RBI) payment
+          guidelines, the following terms govern cancellations, returns, and refunds for
+          transactions initiated on the KAMALO Platform:
+        </p>
+
+        <div className="grid gap-3 sm:grid-cols-2 text-xs">
+          <div className="rounded-xl border border-border bg-surface/50 p-4 space-y-1.5">
+            <div className="flex items-center gap-2 font-semibold text-foreground">
+              <RefreshCw className="h-4 w-4 text-primary" />
+              Digital Recharges & Instant Services
+            </div>
+            <p className="text-muted-foreground">
+              Payments made towards utility bills, telecom/DTH recharges, FASTag reloads, and
+              digital gift vouchers are processed instantly with downstream billers and payment
+              aggregators. Once confirmed by the biller network, these transactions are
+              non-cancellable and non-refundable, except where payment was debited but the
+              recharge/biller confirmation failed.
+            </p>
+          </div>
+          <div className="rounded-xl border border-border bg-surface/50 p-4 space-y-1.5">
+            <div className="flex items-center gap-2 font-semibold text-foreground">
+              <ShoppingBag className="h-4 w-4 text-primary" />
+              Marketplace Physical Goods & Vehicles
+            </div>
+            <p className="text-muted-foreground">
+              For marketplace merchandise, electric bikes, scooters, and accessories, order
+              cancellations are accepted prior to merchant dispatch. In cases of manufacturing
+              defects, in-transit physical damage, or delivery of an incorrect item, returns and
+              replacements must be initiated within forty-eight (48) hours of delivery by notifying
+              Customer Support with unboxing documentation.
+            </p>
+          </div>
+        </div>
+
+        <div className="space-y-3 pt-2 text-xs">
+          <p className="font-semibold text-foreground">Refund Processing & Timelines:</p>
+          <ol className="list-decimal pl-5 space-y-1.5 text-muted-foreground">
+            <li>
+              <strong>Source Account Reversal:</strong> All approved refunds are compulsorily
+              credited back to the <strong>original payment source</strong> (such as your original
+              Credit Card, Debit Card, UPI ID, or Net Banking account) through our authorized
+              payment gateway partners (including PayMate and partner banking switches). Cash
+              refunds are strictly prohibited under RBI guidelines.
+            </li>
+            <li>
+              <strong>Settlement Timelines:</strong> Once initiated by KAMALO, refunds typically
+              reflect in your bank or card statement within{" "}
+              <strong>five (5) to seven (7) banking business days</strong>, subject to your issuing
+              bank&rsquo;s clearing schedule.
+            </li>
+            <li>
+              <strong>Failed Transactions / Auto-Reversals:</strong> If your bank account or card is
+              debited but the KAMALO Platform displays a failed or timed-out status, the debited
+              amount will be automatically reconciled and reversed by the payment gateway switch
+              within statutory T+2 banking days.
+            </li>
+            <li>
+              <strong>Adjustment of Reward Coins:</strong> Any KAMALO Reward Coins, bonuses, or
+              cashback credited to your account ledger in connection with an order that is
+              subsequently cancelled, refunded, or reversed will be debited/deducted from your
+              ledger balance. If the coin balance is insufficient, the equivalent value may be
+              adjusted against future earnings.
+            </li>
+            <li>
+              <strong>Dispute Escalation:</strong> If you identify an unauthorized charge or
+              discrepancy, please reach out directly to our Customer Support Cell at{" "}
+              <a
+                href="mailto:support@kamalo.app"
+                className="font-mono text-primary hover:underline"
+              >
+                support@kamalo.app
+              </a>{" "}
+              within fourteen (14) days before raising an external bank chargeback, allowing our
+              team to verify and resolve the transaction expeditiously.
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* 7. Communication Policy */}
+      <section id="communication" className="scroll-mt-32 space-y-4">
+        <div className="flex items-center gap-2">
+          <span className="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-semibold text-primary">
+            07
           </span>
           <h2 className="text-xl font-bold text-foreground">
             Communication Policy & Device Reformat Procedures
@@ -352,11 +446,11 @@ function Terms() {
         </p>
       </section>
 
-      {/* 7. Prohibited Conduct & Brand Protection */}
+      {/* 8. Prohibited Conduct & Brand Protection */}
       <section id="prohibited-conduct" className="scroll-mt-32 space-y-4">
         <div className="flex items-center gap-2">
           <span className="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-semibold text-primary">
-            07
+            08
           </span>
           <h2 className="text-xl font-bold text-foreground">
             Prohibited Conduct, Intermediary Guidelines & Brand Protection
@@ -410,11 +504,11 @@ function Terms() {
         </div>
       </section>
 
-      {/* 8. Inactivity & Termination */}
+      {/* 9. Inactivity & Termination */}
       <section id="inactivity-termination" className="scroll-mt-32 space-y-4">
         <div className="flex items-center gap-2">
           <span className="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-semibold text-primary">
-            08
+            09
           </span>
           <h2 className="text-xl font-bold text-foreground">
             Inactivity, Suspension & Account Termination
@@ -434,11 +528,11 @@ function Terms() {
         </p>
       </section>
 
-      {/* 9. Limitation of Liability */}
+      {/* 10. Limitation of Liability */}
       <section id="liability-disclaimer" className="scroll-mt-32 space-y-4">
         <div className="flex items-center gap-2">
           <span className="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-semibold text-primary">
-            09
+            10
           </span>
           <h2 className="text-xl font-bold text-foreground">
             Limitation of Liability & Disclaimer of Warranties
@@ -463,11 +557,11 @@ function Terms() {
         </div>
       </section>
 
-      {/* 10. Indemnification */}
+      {/* 11. Indemnification */}
       <section id="indemnity" className="scroll-mt-32 space-y-4">
         <div className="flex items-center gap-2">
           <span className="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-semibold text-primary">
-            10
+            11
           </span>
           <h2 className="text-xl font-bold text-foreground">Indemnification</h2>
         </div>
@@ -482,11 +576,11 @@ function Terms() {
         </p>
       </section>
 
-      {/* 11. Governing Law & Mumbai Jurisdiction */}
+      {/* 12. Governing Law & Mumbai Jurisdiction */}
       <section id="governing-law" className="scroll-mt-32 space-y-4">
         <div className="flex items-center gap-2">
           <span className="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-semibold text-primary">
-            11
+            12
           </span>
           <h2 className="text-xl font-bold text-foreground">
             Governing Law, Arbitration & Exclusive Mumbai Jurisdiction
@@ -528,11 +622,11 @@ function Terms() {
         </div>
       </section>
 
-      {/* 12. Customer Support & Contact */}
+      {/* 13. Customer Support & Contact */}
       <section id="support" className="scroll-mt-32 space-y-4">
         <div className="flex items-center gap-2">
           <span className="rounded-md bg-primary/10 px-2 py-0.5 font-mono text-xs font-semibold text-primary">
-            12
+            13
           </span>
           <h2 className="text-xl font-bold text-foreground">
             Customer Support & Corporate Contact
