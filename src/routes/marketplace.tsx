@@ -196,15 +196,27 @@ function Marketplace() {
                             </p>
                           )}
                         </div>
-                        <button
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            setPayTarget(product);
-                          }}
-                          className="cta-surface pointer-events-auto relative z-20 shrink-0 rounded-xl px-4 py-2.5 text-xs font-semibold tracking-[0.1em] uppercase"
-                        >
-                          Pay {formatINR(amount)}
-                        </button>
+                        {product.payUrl ? (
+                          <a
+                            href={product.payUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            className="cta-surface pointer-events-auto relative z-20 shrink-0 rounded-xl px-4 py-2.5 text-xs font-semibold tracking-[0.1em] uppercase inline-block"
+                          >
+                            Pay {formatINR(amount)}
+                          </a>
+                        ) : (
+                          <button
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setPayTarget(product);
+                            }}
+                            className="cta-surface pointer-events-auto relative z-20 shrink-0 rounded-xl px-4 py-2.5 text-xs font-semibold tracking-[0.1em] uppercase"
+                          >
+                            Pay {formatINR(amount)}
+                          </button>
+                        )}
                       </div>
                     </div>
                   </div>

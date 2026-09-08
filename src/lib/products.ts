@@ -29,6 +29,7 @@ export type Product = {
   badge?: "Bestseller" | "New" | "Limited";
   description: string;
   highlights: { label: string; value: string }[];
+  payUrl?: string;
 };
 
 export const products: Product[] = [
@@ -46,6 +47,8 @@ export const products: Product[] = [
     image: "/Bikes/1bike.webp",
     badge: "Bestseller",
     stats: { range: "130 KM", speed: "65 KM/H", power: "1500W" },
+    payUrl:
+      "https://dev.paymate.in/beta/PMX3.0/Checkout.aspx?guid=9EEAF56B4B846F0D28CC17B10D82056D&paymatemodes=DDE2B5FE67096EC70D24181156D668CA",
     description:
       "Fury is the bike that does everything well — confident on the highway, easy in traffic, and comfortable enough for the long weekend ride out of town.",
     highlights: [

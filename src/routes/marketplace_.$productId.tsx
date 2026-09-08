@@ -168,12 +168,23 @@ function ProductPage() {
                     credited to your KAMALO account on this order.
                   </p>
 
-                  <button
-                    onClick={() => setCheckoutOpen(true)}
-                    className="cta-surface mt-6 w-full rounded-2xl px-8 py-4 text-sm font-semibold tracking-[0.18em] uppercase"
-                  >
-                    Pay {formatINR(amount)}
-                  </button>
+                  {product.payUrl ? (
+                    <a
+                      href={product.payUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cta-surface mt-6 block w-full text-center rounded-2xl px-8 py-4 text-sm font-semibold tracking-[0.18em] uppercase"
+                    >
+                      Pay {formatINR(amount)}
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => setCheckoutOpen(true)}
+                      className="cta-surface mt-6 w-full rounded-2xl px-8 py-4 text-sm font-semibold tracking-[0.18em] uppercase"
+                    >
+                      Pay {formatINR(amount)}
+                    </button>
+                  )}
 
                   <div className="mt-4 flex flex-wrap items-center gap-x-5 gap-y-2 text-xs text-muted-foreground">
                     <span className="flex items-center gap-1.5">
