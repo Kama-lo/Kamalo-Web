@@ -32,6 +32,9 @@ export type Product = {
   payUrl?: string;
 };
 
+const PAYMATE_CHECKOUT_URL =
+  "https://dev.paymate.in/beta/PMX3.0/Checkout.aspx?guid=9EEAF56B4B846F0D28CC17B10D82056D&paymatemodes=DDE2B5FE67096EC70D24181156D668CA";
+
 export const products: Product[] = [
   // — Electric vehicles (one product per real photo, no duplicates) —
   {
@@ -47,8 +50,7 @@ export const products: Product[] = [
     image: "/Bikes/1bike.webp",
     badge: "Bestseller",
     stats: { range: "130 KM", speed: "65 KM/H", power: "1500W" },
-    payUrl:
-      "https://dev.paymate.in/beta/PMX3.0/Checkout.aspx?guid=9EEAF56B4B846F0D28CC17B10D82056D&paymatemodes=DDE2B5FE67096EC70D24181156D668CA",
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Fury is the bike that does everything well — confident on the highway, easy in traffic, and comfortable enough for the long weekend ride out of town.",
     highlights: [
@@ -71,6 +73,7 @@ export const products: Product[] = [
     image: "/Bikes/1scooters.webp",
     badge: "Bestseller",
     stats: { range: "150 KM", speed: "70 KM/H", power: "1800W" },
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Fusion is built for the daily grind — a light, agile electric scooter that gets you through city traffic without breaking a sweat, or the bank.",
     highlights: [
@@ -93,6 +96,7 @@ export const products: Product[] = [
     image: "/Bikes/3scooters.webp",
     badge: "Limited",
     stats: { range: "180 KM", speed: "85 KM/H", power: "2500W" },
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Crown sits at the top of the lineup — a bigger battery, quicker charging, and a firmer suspension setup for the days you push further.",
     highlights: [
@@ -115,6 +119,7 @@ export const products: Product[] = [
     image: "/Bikes/frontside1scooter.webp",
     badge: "New",
     stats: { range: "145 KM", speed: "100 KM/H", power: "4200W" },
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Thunder is tuned for riders who want more — a reinforced frame, sharper acceleration, and enough headroom to keep up with anything else on the road.",
     highlights: [
@@ -144,6 +149,7 @@ export const products: Product[] = [
     },
     denominations: [250, 500, 1000, 2500, 5000],
     badge: "Bestseller",
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "A digital gift card credited straight to the recipient's Amazon.in account. No physical delivery, no expiry rush — pick an amount and it lands in minutes.",
     highlights: [
@@ -170,6 +176,7 @@ export const products: Product[] = [
       illustration: "/Illustrations/Gift_card.svg",
     },
     denominations: [250, 500, 1000, 2500, 5000],
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Send or use a Flipkart e-gift card for electronics, fashion, home essentials and more — delivered instantly and valid for a year from purchase.",
     highlights: [
@@ -197,6 +204,7 @@ export const products: Product[] = [
     },
     denominations: [200, 500, 1000, 2000],
     badge: "New",
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Load a Zomato gift card for food delivery and dining out. Instant delivery to any email or phone number — a fast way to treat someone, or yourself.",
     highlights: [
@@ -229,6 +237,7 @@ export const products: Product[] = [
     },
     denominations: [199, 299, 499, 999],
     badge: "Bestseller",
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Top up any prepaid number, on any major operator, in seconds. No app switching, no separate login — just the plan amount and a confirmation.",
     highlights: [
@@ -258,6 +267,7 @@ export const products: Product[] = [
         "/Illustrations/vecteezy_laptop-credit-card-bill-receipt-paper-and-coins-design_1822931.jpg",
     },
     denominations: [500, 1000, 2000, 5000],
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Pay your electricity board bill directly through KAMALO — enter your consumer number once and settle the month's bill without leaving the app.",
     highlights: [
@@ -286,6 +296,7 @@ export const products: Product[] = [
       illustration: "/Illustrations/dth.png",
     },
     denominations: [300, 600, 900, 1500],
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Recharge your DTH subscription across all major providers. Pick your plan amount, confirm, and your connection stays active — no interruption.",
     highlights: [
@@ -315,6 +326,7 @@ export const products: Product[] = [
     },
     denominations: [500, 800, 1200, 2000],
     badge: "New",
+    payUrl: PAYMATE_CHECKOUT_URL,
     description:
       "Pay your home broadband bill through KAMALO with your account ID — instant confirmation, and no risk of a mid-month disconnection.",
     highlights: [
