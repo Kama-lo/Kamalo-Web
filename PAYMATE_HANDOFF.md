@@ -1,12 +1,12 @@
 # PayMate Integration Handoff Document for Budgetree
 
-This document consolidates all current PayMate integration parameters, endpoints, credentials, and the technical checklist required by the **Budgetree** development team to integrate PayMate payment processing into the KAMALO Web App and Mobile App.
+This document consolidates all PayMate integration parameters, test credentials, endpoints, and the specific inputs **Budgetree** needs to provide to PayMate for server whitelisting and payment callbacks.
 
 ---
 
-## 1. Current Environment & Credentials (Sandbox / Beta)
+## 1. Current Environment Credentials & Endpoints (Sandbox / Beta)
 
-The following credentials and endpoints are currently configured and available:
+The following credentials, API endpoints, and test card details are configured and ready:
 
 | Parameter | Value | Description |
 | :--- | :--- | :--- |
@@ -21,36 +21,36 @@ The following credentials and endpoints are currently configured and available:
 
 ---
 
-## 2. Integration Technical Checklist for Budgetree
+## 2. PayMate Sandbox Test Credentials
 
-To build a complete, robust, and production-ready payment flow in the app & web application, Budgetree will need to confirm / implement the following:
+Use the following card details to test sandbox payment transactions:
 
-### A. API Specifications & Endpoints
-- [x] **Staging API Endpoint**: `https://dev.paymate.in/beta/PartnerStack/api/v2/CollectPayments`
-- [ ] **Production API Endpoint**: Must be requested from PayMate prior to official launch.
-- [ ] **API Payload Schema & Documentation**: Official PDF/Swagger specification for the `CollectPayments` API (to verify exact parameter keys for `amount`, `orderReferenceId`, `customerEmail`, `customerMobile`, `currency`, `returnUrl`).
-- [ ] **API Secret Key / Signature**: Confirm with PayMate if request signing (e.g. SHA-256 HMAC signature key) or Bearer Authentication token is required for server-to-server calls.
-
-### B. Webhooks & Transaction Status Callback
-- [ ] **Server Webhook Handler**: Budgetree backend team needs to implement a webhook listener endpoint (e.g. `POST /api/v1/payments/paymate/callback`) to receive instant server-to-server transaction status updates (Success / Failure / Pending).
-- [ ] **Webhook Signature Key**: Secret key provided by PayMate to verify incoming webhook payloads and prevent payload forgery.
-- [ ] **Redirect URLs (Success & Failure Pages)**:
-  - `successUrl`: Frontend URL where users return after successful payment.
-  - `failureUrl`: Frontend URL where users return if payment fails or is declined.
-  - `cancelUrl`: Frontend URL if user cancels checkout.
-
-### C. Testing & Sandbox Access
-- [x] **Beta Checkout Link**: Verified working link for testing payment flow redirects.
-- [ ] **Test Payment Credentials**: Test UPI IDs, mock Net Banking accounts, and test Card details (Card Number, Expiry, CVV, OTP) provided by PayMate for sandbox validation.
+| Detail | Test Value |
+| :--- | :--- |
+| **Test Card Number** | `4622943127013705` |
+| **Expiry Date** | `12/2029` |
+| **CVV** | `123` |
+| **Postman Collection** | Attached by PayMate (Share with Budgetree API developers) |
 
 ---
 
-## 3. Summary of Information Readiness
+## 3. Required Inputs FROM Budgetree (To Submit to PayMate)
 
-| Information Category | Readiness | Next Action |
-| :--- | :--- | :--- |
-| **Merchant Credentials** | ✅ **Complete** | Hand over `MerchantId`, `TerminalId`, `BusinessXpressID` to Budgetree. |
-| **Sandbox API & Checkout Link** | ✅ **Complete** | Hand over API URL and Beta Checkout link to Budgetree. |
-| **API Payload & Swagger Docs** | ⏳ **Pending** | Request official `CollectPayments` v2 API spec PDF from PayMate. |
-| **API Secret / HMAC Key** | ⏳ **Pending** | Request Webhook Secret & Hash Key from PayMate account manager. |
-| **Production Credentials** | ⏳ **Pending** | Request Production Merchant ID & Live API URLs before final launch. |
+PayMate requires Budgetree to provide the following 3 environment details so PayMate can enable IP whitelisting and payment callback notifications:
+
+| # | Requested Detail | Description | Responsible Party | Status |
+| :---: | :--- | :--- | :---: | :---: |
+| **1** | **UAT Server IP Address** | The static IP address of Budgetree's UAT/Staging server (required by PayMate for API firewall whitelisting). | **Budgetree Backend Team** | ⏳ Awaiting Input |
+| **2** | **Webhook URL (UAT)** | Server endpoint (e.g. `https://uat-api.budgetree-server.com/api/v1/paymate/webhook`) built by Budgetree to listen for transaction status updates. | **Budgetree Backend Team** | ⏳ Awaiting Input |
+| **3** | **Merchant Return Page URL** | Frontend checkout redirect page URL (e.g. `https://uat.kamalo.app/checkout/status`) where users are redirected after payment completion/cancellation. | **Budgetree Frontend Team** | ⏳ Awaiting Input |
+
+---
+
+## 4. Next Steps & Workflow
+
+1. **Send to Budgetree**: Forward this document, `.env` file, and PayMate Postman Collection to Budgetree's engineering lead.
+2. **Collect 3 Details from Budgetree**:
+   - UAT Server IP Address
+   - Webhook URL (UAT)
+   - Merchant Return Page URL (Checkout Flow)
+3. **Submit to PayMate**: Send these 3 details back to the PayMate onboarding team so they can activate webhook pushing and IP whitelisting on dev.paymate.in.
